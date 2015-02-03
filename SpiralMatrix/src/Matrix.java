@@ -37,12 +37,9 @@ public class Matrix {
 	public int determineColCount(String fileName) throws FileNotFoundException {
 		File inFile = new File(fileName);
 		Scanner in = new Scanner(inFile);
-		int intLength = 0;
-		String[] length = in.nextLine().trim().split("\\s+");
-		for (int i = 0; i < length.length; i++)
-		  intLength++;
+		String[] a = in.nextLine().trim().split("\\s+");
 		in.close();
-		return intLength;
+		return a.length;
 	}
 	
 	public List<String> spiralPrint(int rowCount, int colCount, String[][] a) {
@@ -90,7 +87,7 @@ public class Matrix {
  
 	public static void main(String[] args) throws Exception {
 	    Matrix m = new Matrix();
-	    String fileName = "C:\\a.txt";
+	    String fileName = "C:\\Apps\\eclipse\\a.txt";
 	    int rowCount = m.determineRowCount(fileName);
 	    int colCount = m.determineColCount(fileName);
 	    System.out.println(rowCount);
